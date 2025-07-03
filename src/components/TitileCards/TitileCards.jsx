@@ -1,10 +1,13 @@
 import React from 'react'
 import card_data from '../../../public/images/films/top10/Cards_data'   
-function TitileCards() {
+import { BiCategory } from 'react-icons/bi'
+function TitileCards({title}) {
+  
   return (
     <>
+    <h2 className='mt-[40px] ml-[62px] font-bold text-2xl'>
+      {title?title:"Trending Now"}</h2>
     <div className=' w-auto    overflow-x-scroll  scrollbar-hide'>
-    <h2 className='mt-[40px] ml-[62px] font-bold text-2xl'>Trending Now</h2>
     <div className='flex gap-[50px] mt-[30px] ml-[50px] mb-[50px] w-[4000px]'>
         {card_data.map((card,index)=>{
             return(

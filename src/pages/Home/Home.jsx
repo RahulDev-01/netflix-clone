@@ -3,8 +3,11 @@ import Navbar from '../../components/Navbar/Navbar';
 import { FaPlay } from "react-icons/fa";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import TitileCards from '../../components/TitileCards/TitileCards';
+import Footer from '../../components/Footer/Footer';
 
 function Home() {
+
+
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
@@ -46,6 +49,14 @@ function Home() {
         
       </div>
           <TitileCards />
+          <div>
+                      <TitileCards title={"Blockbuster Movies"}/>
+                      <TitileCards title={"Only on Netflix"}/>
+                      <TitileCards title={"Upcoming"}/>
+                      <TitileCards title={"Top picks for you"}/>
+
+          </div>
+          <Footer />
     </>
   );
 }
