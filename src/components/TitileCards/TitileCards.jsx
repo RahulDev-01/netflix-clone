@@ -12,7 +12,7 @@ function TitileCards({title}) {
         {card_data.map((card,index)=>{
             return(
                 <div key={index} className=' h-[320px] relative w-[252px] ml-[15px]    '>
-                    <img src={card.image} alt="" className='  w-[252px] h-[320px] rounded-[4px]  object-cover'/>
+                    <img src={card.image} alt="" className='  w-[252px] h-[320px] rounded-[4px]  object-cover cursor-pointer hover:scale-105 duration-200'/>
                     <span
                     className='text-[6.25rem] absolute top-[190px] left-[-21px] font-bold text-black text-shadow-all-sides '
 

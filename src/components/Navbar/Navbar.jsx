@@ -2,6 +2,7 @@ import React from 'react';
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
+import { logout } from '../../firebase';
 
 function Navbar() {
   const navEle = [
@@ -44,7 +45,7 @@ function Navbar() {
 
           {/* Dropdown: stays on hover of image OR dropdown */}
           <div className='absolute right-0 top-[100%] bg-[#191919] text-[14px] p-[20px] underline z-[50] hidden group-hover:block w-[200px]'>
-            <p>Sign Out From Netflix  </p>
+            <p onClick={()=>{logout()} } className='cursor-pointer'>Sign Out From Netflix  </p>
           </div>
         </div>
       </div>
