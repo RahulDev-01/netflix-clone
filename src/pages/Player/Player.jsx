@@ -43,7 +43,8 @@ useEffect(()=>{
         title="trailer"
         allowFullScreen
         frameborder="0"
-        className=" h-[] w-[90%] rounded-[10px] h-[90%]"
+        className=" h-[] w-[90%] rounded-[10px] h-[90%]  "
+        
       ></iframe>
       <div className="flex items-center justify-between w-[90%]">
         <p>{apiData.published_at.slice(0,10)}</p>
