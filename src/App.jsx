@@ -6,6 +6,8 @@ import './App.css'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { auth } from './firebase'
 import { ToastContainer, toast } from 'react-toastify';
+import Player from './pages/Player/Player'
+import NewPlayer from './pages/Player/NewPlayer'
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
     <Routes>
       <Route  path='/' element= {<Home />} />
       <Route  path='/login' element= {<Login />} />
+      <Route path='/player/:id'  element ={<Player />} />
+      <Route path='/user'  element ={<NewPlayer />} />
 
       
     </Routes>

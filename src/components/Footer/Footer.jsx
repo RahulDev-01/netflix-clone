@@ -47,7 +47,7 @@ const li4 =[
     <div className='flex gap-[10px]  ml-[255px] ]'>
     {
       icons.map((icon,index)=>{
-       return <span className='text-3xl mt-[50px]'>{icon.icon}</span>
+       return <span className='text-3xl mt-[50px] cursor-pointer hover:scale-120'>{icon.icon}</span>
       })
     }
     </div>
@@ -55,28 +55,28 @@ const li4 =[
     <div className='flex flex-col mt-[50px] gap-[15px]  mb-[15px]'>
     {
       li1.map((icon,index)=>{
-       return <span className='text-[20px] font-medium'>{icon.name}</span>
+       return <span className='text-[20px] font-medium cursor-pointer hover:scale-110'>{icon.name}</span>
       })
     }
     </div>
     <div className='flex flex-col mt-[50px] gap-[15px] '>
     {
       li2.map((icon,index)=>{
-       return <span className='text-[20px] font-medium'>{icon.name}</span>
+       return <span className='text-[20px] font-medium cursor-pointer hover:scale-105'>{icon.name}</span>
       })
     }
     </div>
     <div className='flex flex-col mt-[50px] gap-[15px] '>
     {
       li3.map((icon,index)=>{
-       return <span className='text-[20px] font-medium'>{icon.name}</span>
+       return <span className='text-[20px] font-medium cursor-pointer hover:scale-105'>{icon.name}</span>
       })
     }
     </div>
     <div className='flex flex-col mt-[50px] gap-[15px] '>
     {
       li4.map((icon,index)=>{
-       return <span className='text-[20px] font-medium'>{icon.name}</span>
+       return <span className='text-[20px] font-medium cursor-pointer hover:scale-105'>{icon.name}</span>
       })
     }
     </div>

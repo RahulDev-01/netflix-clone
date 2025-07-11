@@ -42,9 +42,9 @@ function Navbar() {
     >
       <div className='flex gap-[30px] items-center'>
         <img src="/public/navLogo.png" alt="logo" className='h-[80px] cursor-pointer' />
-        <ul className='flex gap-[30px] cursor-pointer'>
+        <ul className='flex gap-[30px] cursor-pointer '>
           {navEle.map((n, i) => (
-            <li key={i}>{n.name}</li>
+            <li key={i} className='hover:scale-120'>{n.name}</li>
           ))}
         </ul>
       </div>
