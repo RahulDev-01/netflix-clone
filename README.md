@@ -72,7 +72,7 @@ export const auth = getAuth(app);
 1. **Login**: Navigate to `/login` and sign in using your Firebase Authentication method (email/password).
 2. **Home Page**: Once logged in, you'll be redirected to the home page (`/`).
 3. **Player Page**: You can view detailed information about players by visiting `/player/:id` where `:id` is the player's ID.
-4. **Create New Player**: Authenticated users can go to `/user` to create a new player profile.
+4. **Create New Player**: Authenticated users can go  `/user` to create a new player profile.
 
 ### Start the App
 
