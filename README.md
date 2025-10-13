@@ -1,4 +1,4 @@
-# React Firebase App
+# React Firebase App (Netflix Clone ) 
 
 This is a React application that uses Firebase Authentication to manage user login/logout and routes users to different pages based on their authentication status.
 
