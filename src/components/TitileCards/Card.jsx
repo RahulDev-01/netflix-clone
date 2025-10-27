@@ -6,7 +6,7 @@ function Card({ title, category, setLoading }) {
   const navigate = useNavigate();
 
   // TMDB API Key (replace with your actual key)
-  const apiKey = "996df9b7983b9c7756d24f9574a94868";
+  const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 
   // TMDB API options
   const options = {

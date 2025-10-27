@@ -1,7 +1,3 @@
-Here's a sample README file for your React app:
-
----
-
 # React Firebase App
 
 This is a React application that uses Firebase Authentication to manage user login/logout and routes users to different pages based on their authentication status.
