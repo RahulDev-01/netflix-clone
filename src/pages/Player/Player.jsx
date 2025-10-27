@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+
 function Player() {
 
   const {id}=useParams();
@@ -14,24 +15,25 @@ function Player() {
     typeof :"",
   })
 
+  const v4Token = import.meta.env.VITE_TMDB_V4_TOKEN;
+  const v3Key = import.meta.env.VITE_TMDB_API_KEY;
   const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5OTZkZjliNzk4M2I5Yzc3NTZkMjRmOTU3NGE5NDg2OCIsIm5iZiI6MTc1MTYwNzMwMy45NDksInN1YiI6IjY4Njc2ODA3OWVhMDVhMGE1MjVlMzY1MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.AZGplHP5zevDM0uTjAXtiuqNrwALpg_DCyM4FykYASE'
-  }
-};
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: v4Token ? `Bearer ${v4Token}` : undefined,
+    }
+  };
 
-useEffect(()=>{
-  fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
-  .then(res => res.json())
-  .then(res => setApiDate(res.results[0]))
-  .catch(err => console.error(err));
-},[])
-
-
-
-
+  useEffect(()=>{
+    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US${v3Key ? `&api_key=${v3Key}`: ""}`, options)
+    .then(res => res.json())
+    .then(async (res) => {
+      setApiDate(res.results[0]);
+      try { await upsertContinueWatching(id, {}); } catch (_) {}
+    })
+    .catch(err => console.error(err));
+  },[])
 
   return (
     <div className="h-screen flex flex-col content-center  justify-center items-center relative">
