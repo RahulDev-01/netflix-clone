@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # React Firebase App
+=======
+# React Firebase App (Netflix Clone ) 
+>>>>>>> f0ef32ecdc14afe1a224c3e276f13e1c0f446847
 
 This is a React application that uses Firebase Authentication to manage user login/logout and routes users to different pages based on their authentication status.
 
@@ -30,7 +34,7 @@ git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 ```
 
-### Install Dependencies
+### Install Dependencies 🔨
 
 Install the required npm packages:
 
