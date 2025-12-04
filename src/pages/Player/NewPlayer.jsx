@@ -13,16 +13,19 @@ function Player() {
     type: "", // Fixed typo from 'typeof' to 'type'
   });
 
+  const v4Token = import.meta.env.VITE_TMDB_V4_TOKEN;
+  const v3Key = import.meta.env.VITE_TMDB_API_KEY;
   const options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer YOUR_API_KEY_HERE', // Replace with actual API token
+      Authorization: v4Token ? `Bearer ${v4Token}` : undefined, // Replace with actual API token
     },
   };
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
+    if (!id) return;
+    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US${v3Key ? `&api_key=${v3Key}` : ''}`, options)
       .then(res => res.json())
       .then(res => {
         console.log("API Response:", res); // Debugging the API response
@@ -41,7 +44,7 @@ function Player() {
       </button>
       {apiData.key ? (
         <iframe
-          src={`https://www.youtube.com/embed/zcfuj3EBZaE`}
+          src={`https://www.youtube.com/embed/${apiData.key}`}
           title="trailer"
           allowFullScreen
           frameBorder="0"
@@ -60,3 +63,4 @@ function Player() {
 }
 
 export default Player;
+

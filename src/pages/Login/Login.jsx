@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { signup, login } from '../../firebase'; 
-import loading1 from '../../../public/images/misc/loading.gif' 
+const loading1 = '/images/misc/loading.gif'
 
 function Login() {
   const [signState, setSignState] = useState("Sign In");
@@ -30,7 +30,7 @@ function Login() {
     </div>:
     <div className="h-screen w-screen object-cover p-[20px] overlay-bg">
       <div>
-        <img src="/public/navLogo.png" alt="" className="w-[150px]" />
+        <img src="/navLogo.png" alt="" className="w-[150px]" />
       </div>
       <div>
         <form className="w-screen max-w-[450px] bg-[rgba(0,0,0,0.75)] rounded-[4px] p-[50px] m-auto">

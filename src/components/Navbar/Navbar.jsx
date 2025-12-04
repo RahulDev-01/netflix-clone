@@ -41,7 +41,7 @@ function Navbar() {
       `}
     >
       <div className='flex gap-[30px] items-center'>
-        <img src="/public/navLogo.png" alt="logo" className='h-[80px] cursor-pointer' />
+        <img src="/navLogo.png" alt="logo" className='h-[80px] cursor-pointer' />
         <ul className='flex gap-[30px] cursor-pointer '>
           {navEle.map((n, i) => (
             <li key={i} className='hover:scale-120'>{n.name}</li>
@@ -60,7 +60,7 @@ function Navbar() {
           {/* Avatar + angle down icon */}
           <div className="flex items-center gap-[4px] cursor-pointer">
             <img
-              src="/public/images/users/4.png"
+              src="/images/users/4.png"
               alt="user"
               className='h-[40px] rounded-[5px]'
             />

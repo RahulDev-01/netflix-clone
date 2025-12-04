@@ -100,6 +100,10 @@ function Home() {
             <Card title="Upcoming" category="upcoming" setLoading={setLoading} />
             <Card title="Blockbuster Movies" category="top_rated" setLoading={setLoading} />
             <Card title="Top picks for you" category="now_playing" setLoading={setLoading} />
+            <div>
+              <h1>My Movies</h1>
+              
+            </div>
           </div>
 
           <Footer />

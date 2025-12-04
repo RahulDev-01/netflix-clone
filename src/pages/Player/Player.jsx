@@ -12,7 +12,7 @@ function Player() {
     name:"",
     key:"",
     published_at:"",
-    typeof :"",
+    type :"",
   })
 
   const v4Token = import.meta.env.VITE_TMDB_V4_TOKEN;
@@ -28,27 +28,26 @@ function Player() {
   useEffect(()=>{
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US${v3Key ? `&api_key=${v3Key}`: ""}`, options)
     .then(res => res.json())
-    .then(async (res) => {
+    .then((res) => {
       setApiDate(res.results[0]);
-      try { await upsertContinueWatching(id, {}); } catch (_) {}
     })
     .catch(err => console.error(err));
   },[])
 
   return (
     <div className="h-screen flex flex-col content-center  justify-center items-center relative">
-      <Link onClick={()=>{useNavigate(-2)}} className="absolute top-[30px] left-[20px] w-[50px] cursor-pointer text-[40px]">
+      <Link onClick={()=>{navigate(-1)}} className="absolute top-[30px] left-[20px] w-[50px] cursor-pointer text-[40px]">
         <IoArrowBackCircleSharp />
       </Link>
       <iframe
         src={`https://www.youtube.com/embed/${apiData.key}`}
         title="trailer"
         allowFullScreen
-        frameborder="0"
-        className=" h-[] w-[90%] rounded-[10px] h-[90%]"
+        frameBorder="0"
+        className=" w-[90%] rounded-[10px] h-[90%]"
       ></iframe>
       <div className="flex items-center justify-between w-[90%]">
-        <p>{apiData.published_at.slice(0,10)}</p>
+        <p>{apiData.published_at ? apiData.published_at.slice(0,10) : ""}</p>
         <p>{apiData.name}</p>
         <p>{apiData.type}</p>
       </div>

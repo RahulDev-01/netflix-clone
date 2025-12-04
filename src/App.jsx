@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Player from './pages/Player/Player'
 import NewPlayer from './pages/Player/NewPlayer'
 
+
 function App() {
 
    const navigate = useNavigate()
@@ -35,7 +36,9 @@ function App() {
       <Route  path='/' element= {<Home />} />
       <Route  path='/login' element= {<Login />} />
       <Route path='/player/:id'  element ={<Player />} />
-      <Route path='/user'  element ={<NewPlayer />} />
+      <Route path='/user/:id'  element ={<NewPlayer />} />
+      {/* <Route path='/local' element={<LocalLibrary />} /> */}
+      {/* <Route path='/local/play' element={<LocalPlayer />} /> */}
 
       
     </Routes>
@@ -45,3 +48,4 @@ function App() {
 }
 
 export default App
+
